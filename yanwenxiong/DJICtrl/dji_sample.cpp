@@ -1,4 +1,5 @@
 #include "dji_sample.h"
+#include "stdio.h"
 
 static int DJI_Sample_Create_Thread(void *(* func)(void *), void *arg)
 {

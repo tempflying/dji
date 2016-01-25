@@ -23,13 +23,18 @@ int main(int argc, char *argv[])
     //return a.exec();
     DJI_Sample_Setup();
     listSerialPort();
-    openSerialport("COM5");
+    openSerialport("COM4");
     active();
     sleep(3);
     obtainControl();
 
-
-    DJI_Sample_Atti_Ctrl();
+    //void* a;
+    //DJI_Sample_Atti_Ctrl_Thread_Func(a);
+    if(DJI_Sample_Atti_Ctrl() < 0)
+    {
+        printf("please wait until the current thread finish!\n");
+    }
+    sleep(20);
 }
 
 int DJI_Sample_Setup(void)

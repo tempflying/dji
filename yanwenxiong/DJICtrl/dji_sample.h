@@ -7,5 +7,6 @@
 static int atti_ctrl_sample_flag = -1;
 
 int DJI_Sample_Atti_Ctrl(void);
+//static void * DJI_Sample_Atti_Ctrl_Thread_Func(void *arg);
 
 #endif
