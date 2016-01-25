@@ -14,7 +14,7 @@ int Pro_Hw_Setup(const char *device,int baudrate);
 #include <QString>
 #include <QObject>
 #include <QThread>
-#include "qextserialport.h"
+#include "serial/qextserialport.h"
 
 #define DJI_PRO_HW_BUFFER_SIZE      1024
 

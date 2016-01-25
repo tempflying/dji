@@ -286,7 +286,7 @@ int Pro_Hw_Setup(const char *device,int baudrate)
 #ifdef PLATFORM_QT
 #include <QThread>
 #include <QByteArray>
-#include <qextserialport.h>
+#include <serial/qextserialport.h>
 #include <pthread.h>
 #include <string.h>
 #include <stdio.h>
