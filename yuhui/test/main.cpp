@@ -146,5 +146,3 @@ void obtainControl()
         printf("obtain control success\n");
     }
 }
-
-
