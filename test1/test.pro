@@ -24,7 +24,8 @@ SOURCES += main.cpp\
     DJI_LIB/DJI_Pro_Codec.cpp \
     DJI_LIB/DJI_Pro_Hw.cpp \
     DJI_LIB/DJI_Pro_Link.cpp \
-    DJI_LIB/DJI_Pro_Rmu.cpp
+    DJI_LIB/DJI_Pro_Rmu.cpp \
+    OurDJI_FUNC.cpp
 
 HEADERS  += mainwindow.h \
     qextserialbase.h \
@@ -35,6 +36,7 @@ HEADERS  += mainwindow.h \
     DJI_LIB/DJI_Pro_Config.h \
     DJI_LIB/DJI_Pro_Hw.h \
     DJI_LIB/DJI_Pro_Link.h \
-    DJI_LIB/DJI_Pro_Rmu.h
+    DJI_LIB/DJI_Pro_Rmu.h \
+    OurDJI_FUNC.h
 
 FORMS    += mainwindow.ui
