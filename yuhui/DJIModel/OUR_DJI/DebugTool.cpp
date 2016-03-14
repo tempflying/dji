@@ -1,6 +1,7 @@
 #include "DebugTool.h"
 #include "stdio.h"
 #include "string.h"
+#include <windows.h>
 
 // 数据是小端派编址，而打印是从地地址开始的，所以对于一个字段如果包含多个字节，他的顺序是反的
 // unsigned char 很多时候是用来存整数的，即码号
@@ -45,4 +46,11 @@ void OurPrint(activate_data_t user_act_data){
         printf("%c",user_act_data.app_key[i]);
     }
     printf("\n");
+}
+
+void OurAllocConsole(){
+    AllocConsole();
+    freopen("conin$","r+t",stdin);
+    freopen("conout$","w+t",stdout);
+    freopen("conout$","w+t",stderr);
 }
