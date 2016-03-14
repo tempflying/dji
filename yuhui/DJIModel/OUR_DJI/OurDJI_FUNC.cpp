@@ -63,11 +63,10 @@ void OurDoSerialPort(bool operate,const char* serialPortName, int baud){
             return;
         }
 
-        printf("try to open serial port %s. result :\n  ",serialPortName);
         if(true == hw_instance->Pro_Hw_Setup(serialPortName, baud))
          {
              hw_instance->start();
-
+             printf("serial port %s open success\n",serialPortName);
          }
         else
          {
@@ -76,8 +75,8 @@ void OurDoSerialPort(bool operate,const char* serialPortName, int baud){
     }
     else if(operate == OUR_CLOSE_PORT)
     {
-        printf("try to close serial\n");
         hw_instance->Pro_Hw_Close();
+        printf("close serial success\n");
     }
 }
 
@@ -89,11 +88,11 @@ void OurActivateCallback(unsigned short res) // 激活函数的回调用函数�
 
     if(res >= 0 && res < 9)
     {
-        printf("  %s\n",*(result+res));
+        printf("%s\n",*(result+res));
     }
     else
     {
-        printf("  Unkown ERROR\n");
+        printf("Unkown ERROR\n");
     }
 }
 
@@ -101,7 +100,7 @@ void OurActivateCallback(unsigned short res) // 激活函数的回调用函数�
 // 同一进程的不同线程能够共享的只有全局变量的动态变量
 activate_data_t _Our_user_act_data;
 void OurActivate(int appId, int appLevel, char* appKey){
-    printf("try to active : \n  ");
+    printf("active : \n");
     _Our_user_act_data.app_id = appId;                   //QString("1023480").toInt();
     _Our_user_act_data.app_api_level = appLevel;         //QString("2").toInt();
     _Our_user_act_data.app_ver = SDK_VERSION;
@@ -114,47 +113,12 @@ void OurActivate(int appId, int appLevel, char* appKey){
 
 void OurDoControl(bool operate){
     if(operate == OUR_RELEASE_CONTROL){
-        printf("try to release control\n");
         DJI_Pro_Control_Management(0,NULL);             // 内部已经有usleep(5000)了
+        printf("release control success\n");
     }
     else if(operate == OUR_OBTAIN_CONTROL){
-        printf("try to obtain control success, the result is:\n  ");
         DJI_Pro_Control_Management(1,NULL);
+        printf("obtain control success\n");
     }
 }
 
-
-#ifdef OUR_DJI_PRO
-// 注释DJI_Pro的程序
-int OUR_DJI_Pro_Attitude_Control(attitude_data_t *p_user_data){
-    DJI_Pro_Attitude_Control(p_user_data);
-}
-
-int Our_DJI_Pro_Gimbal_Angle_Control(gimbal_custom_control_angle_t *p_user_data){
-    DJI_Pro_Gimbal_Angle_Control(p_user_data);
-}
-
-int Our_DJI_Pro_Gimbal_Speed_Control(gimbal_custom_speed_t *p_user_data){
-    DJI_Pro_Gimbal_Speed_Control(p_user_data);
-}
-
-int Our_DJI_Pro_Get_Broadcast_Data(sdk_std_msg_t *p_user_buf){
-    DJI_Pro_Get_Broadcast_Data(p_user_buf);
-}
-
-// 命令集ID
-unsigned char Our_DJI_Pro_Get_CmdSet_Id(ProHeader *header){ DJI_Pro_Get_CmdSet_Id(header);}
-// 命令码ID
-unsigned char Our_DJI_Pro_Get_CmdCode_Id(ProHeader *header){ DJI_Pro_Get_CmdCode_Id(header);}
-// ****** 电池电量
-int Our_DJI_Pro_Get_Bat_Capacity(unsigned char *data){ DJI_Pro_Get_Bat_Capacity(data);}
-// ****** 姿态四元数
-int Our_DJI_Pro_Get_Quaternion(api_quaternion_data_t *p_user_buf){ DJI_Pro_Get_Quaternion(p_user_buf);}
-// ****** 加速度
-int Our_DJI_Pro_Get_GroundAcc(api_common_data_t *p_user_buf){ DJI_Pro_Get_GroundAcc(p_user_buf);}
-// ****** 速度
-int Our_DJI_Pro_Get_GroundVo(api_vel_data_t *p_user_buf){ DJI_Pro_Get_GroundVo(p_user_buf);}
-// ****** 控制数据
-int Our_DJI_Pro_Get_CtrlInfo(api_ctrl_info_data_t *p_user_buf){ DJI_Pro_Get_CtrlInfo(p_user_buf);}
-
-#endif //OUR_DJI_PRO

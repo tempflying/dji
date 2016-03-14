@@ -12,7 +12,6 @@ INPUT(
 ./release\qextserialport.o
 ./release\win_qextserialport.o
 ./release\DJI_Pro_Sample.o
-./release\MyDemo.o
 ./release\moc_mainwindow.o
 ./release\moc_DJI_Pro_Hw.o
 ./release\moc_qextserialbase.o

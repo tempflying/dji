@@ -27,8 +27,7 @@ SOURCES += main.cpp\
     serial/qextserialbase.cpp \
     serial/qextserialport.cpp \
     serial/win_qextserialport.cpp \
-    DJI_DEMO/DJI_Pro_Sample.cpp \
-    DJI_DEMO/MyDemo.cpp
+    DJI_DEMO/DJI_Pro_Sample.cpp
 
 HEADERS  += mainwindow.h \
     DJI_LIB/DJI_Pro_App.h \
@@ -42,7 +41,6 @@ HEADERS  += mainwindow.h \
     serial/qextserialbase.h \
     serial/qextserialport.h \
     serial/win_qextserialport.h \
-    DJI_DEMO/DJI_Pro_Sample.h \
-    DJI_DEMO/MyDemo.h
+    DJI_DEMO/DJI_Pro_Sample.h
 
 FORMS    += mainwindow.ui
