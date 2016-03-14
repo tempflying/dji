@@ -17,4 +17,6 @@ void OurPrintFrame(unsigned char* buf, int len);
 // 该系列函数用于打印一切调试数据
 void OurPrint(activate_data_t user_act_data);
 
+void OurAllocConsole();
+
 #endif // DEBUGTOOL_H

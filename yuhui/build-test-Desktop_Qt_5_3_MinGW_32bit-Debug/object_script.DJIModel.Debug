@@ -12,6 +12,7 @@ INPUT(
 ./debug\qextserialport.o
 ./debug\win_qextserialport.o
 ./debug\DJI_Pro_Sample.o
+./debug\MyDemo.o
 ./debug\moc_mainwindow.o
 ./debug\moc_DJI_Pro_Hw.o
 ./debug\moc_qextserialbase.o
