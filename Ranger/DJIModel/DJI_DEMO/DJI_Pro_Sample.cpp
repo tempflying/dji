@@ -39,7 +39,7 @@ static int DJI_Sample_Create_Thread(void *(* func)(void *), void *arg)
 }
 
 /*
- * This method is responsible for testing atttitude
+ * This method is responsible for testing attitude
  */
 static void * DJI_Sample_Atti_Ctrl_Thread_Func(void *arg)
 {
@@ -463,7 +463,7 @@ void DJI_CalPos(const fp64 Cur_lati_r, const fp64 Cur_longti_r, const fp32 Cur_a
     *Tar_alti_m = Cur_alti_m + alti_offset_m;
 }
 
-void DJI_GotoPos(fp64 lati, fp64 longti, fp32 alti,fp32 err)
+void DJI_GotoPos1(fp64 lati, fp64 longti, fp32 alti,fp32 err)
 {
     sdk_std_msg_t UavInfo;
     attitude_data_t user_ctrl_data;
@@ -540,7 +540,7 @@ void DJI_Sample_Way_Point()
 
     for(int i = 0; i < 5; i++)
     {
-        DJI_GotoPos(way_point_data[i].lati_r, way_point_data[i].longti_r,\
+        DJI_GotoPos1(way_point_data[i].lati_r, way_point_data[i].longti_r,\
                     way_point_data[i].alti_m,0.3);
     }
 }
