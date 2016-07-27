@@ -1,9 +1,9 @@
 #基于DJI M100的人群检测
-##项目简介
-##项目开发环境
-##[项目说明](#3)
-##项目主要参考内容
-##完成度与待改进的地方
+- 项目简介
+- 项目开发环境
+- [项目说明]
+- 项目主要参考内容
+- 完成度与待改进的地方
 ----------------------------------------------------
 ##项目简介
 项目最终目的示意图
@@ -49,7 +49,12 @@ vision                |  视觉模块
 - [P.Dollar, C. Wojek,B. Schiele, et al. Pedestrian detection: an evaluation of the state of the art [J].IEEE Transactions on PatternAnalysis andMachine Intelligence, 2012, 34(4): 743-761.](https://www.computer.org/cms/ComputingNow/homepage/2012/0412/T_TP2_PedestrianDetection.pdf)
 - [hog 特征](http://blog.csdn.net/liulina603/article/details/8291093)
 
-
-
-
-
+##完成度和待改进的地方
+####已完成
+- 飞行控制程序架构基本完成，基于此，后继开发可以有更多精力关注飞行逻辑本身，而不必过多的关注环境和代码结构设计。
+- 视觉直接使用opencv提供的hog+svm训练后的模型，进行识别
+- 手机端APP和飞控程序间的通信完成
+####未完成和待改进
+- 飞行控制程序和视觉程序从windows移植到Ubuntu（mini PC）
+- 视觉算法效率太低，远远无法达到实时性，需要改进
+- 手机APP界面优化和传输数据大小有上限
