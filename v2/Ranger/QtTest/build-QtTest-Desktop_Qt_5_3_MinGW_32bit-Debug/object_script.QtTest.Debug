@@ -1,0 +1,17 @@
+INPUT(
+./debug\mainwindow.o
+./debug\DJI_Pro_App.o
+./debug\DJI_Pro_Codec.o
+./debug\DJI_Pro_Hw.o
+./debug\DJI_Pro_Link.o
+./debug\DJI_Pro_Rmu.o
+./debug\qextserialbase.o
+./debug\qextserialport.o
+./debug\win_qextserialport.o
+./debug\main.o
+./debug\moc_mainwindow.o
+./debug\moc_qextserialbase.o
+./debug\moc_qextserialport.o
+./debug\moc_win_qextserialport.o
+./debug\moc_DJI_Pro_Hw.o
+);
