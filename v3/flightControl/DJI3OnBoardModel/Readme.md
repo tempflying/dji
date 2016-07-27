@@ -3,12 +3,6 @@
 - 如何使用这个模板
 - pipeline
 - action
-
-## 目录说明#DJI3OnBoardModel
-- 目录说明
-- 如何使用这个模板
-- pipeline
-- action
 - OurByteConvertUtil
 
 ## 目录说明
