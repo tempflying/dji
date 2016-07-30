@@ -168,7 +168,7 @@ void OurDJIPipelineInterface::timerEvent(QTimerEvent *)
 
 ```cpp
 int i = 0;
-while(i < 100){
+while(i < 1000){
     sendFlyCommand();   // 每个一段时间发送一次飞行指令，保证指令的执行
     i++;
     usleep(2000);      // 沉睡2ms
